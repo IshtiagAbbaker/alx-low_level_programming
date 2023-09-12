@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
 * print_alphabet 10 times - Entry point
 * Return:0
@@ -19,4 +18,5 @@ c++;
 }
 _putchar('\n');
 i++;
+}
 }
