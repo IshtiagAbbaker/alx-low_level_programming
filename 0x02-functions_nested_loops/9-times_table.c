@@ -19,10 +19,7 @@ if (j == 0)
 {
 _putchar('0' + num);
 }
-else
-{
-_putchar(' ');
-if (num < 10)
+else if (num < 10)
 {
 _putchar(' ');
 }
@@ -43,4 +40,4 @@ _putchar('\n');
 }
 }
 }
-}
+
