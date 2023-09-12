@@ -7,5 +7,15 @@
 
 int _isalpha(int c)
 {
-return ((c >= 97 && c <= 122) || (c <= 65 && c <= 90));
+while (c >= 65 && c <= 122)
+{
+if (c == 91 || c == 92 || c == 93 || c == 94 || c == 95 || c == 96)
+{
+return (0);
+}
+eles
+{
+return (1);
+}
+}
 }
