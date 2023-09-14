@@ -15,6 +15,7 @@ for (c = 0; c <= 14; c++)
 {
 _putchar(48 + c);
 }
+_putchar('\n');
 }
 _putchar('\n');
 }
