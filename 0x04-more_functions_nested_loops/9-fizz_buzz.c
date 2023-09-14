@@ -5,9 +5,9 @@
  *       numbers that are multiples of 5 print Buzz
  *       numbers that are multiples of 3 n 5 print FizzBuzz
  *       each number and word to be separated by space
- * Return: 0 
+ * Return: 0
 */
-int main (void)
+int main(void)
 {
 int i;
 for (i = 1; i <= 100; i++)
@@ -15,7 +15,7 @@ for (i = 1; i <= 100; i++)
 if (i % 3 == 0 && i % 5 == 0)
 printf("FizzBuzz");
 
- if (i % 3 == 0)
+if (i % 3 == 0)
 printf("Fizz");
 
 else if (i % 5 == 0)
