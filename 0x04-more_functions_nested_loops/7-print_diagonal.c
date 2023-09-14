@@ -18,7 +18,7 @@ for (i = 1; i <= n; i++)
 {
 for (space = 1; space <= i; ++space)
 _putchar(' ');
-_putchar(92); 
+_putchar(92);
 _putchar('\n');
 }
 }
