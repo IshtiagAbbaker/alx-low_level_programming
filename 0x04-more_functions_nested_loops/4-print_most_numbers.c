@@ -1,19 +1,18 @@
 #include "main.h"
 
 /**
-* print_most_numbers - prints 01356789, followed by a new line
+* print_numbers - prints the numbers, from 0 to 9 Do not print 2 and 4, followed by a new line
 * Return: void
 **/
+
 void print_most_numbers(void)
 {
-int i = 0;
-while (i <= 9)
+char c;
+
+for (c = '0'; c <= '9'; c++)
 {
-if (i != 2 || i != 4)
-{
-_putchar(48 + i);
-}
-i++;
+if (!(c == '2' || c == '4'))
+putchar(c);
 }
 _putchar('\n');
 }
