@@ -8,18 +8,22 @@
 
 void rev_string(char *s)
 {
-int a = 0, b, c;
-char d;
+int len, i, half;
+char temp;
 
-while (s[a] != '\0')
+for (len = 0; s[len] != '\0'; len++)
+;
+
+i = 0;
+
+half = len / 2;
+
+while (half--)
 {
-		a++;
+temp = s[len - i - 1];
+s[len - i - 1] = s[i];
+s[i] = temp;
+i++;
 }
-c = a - 1;
-for (b = 0; c >= 0 && b < c; c--; b++)
-{
-d = s[b];
-s[b] = s[c];
-s[c] = d;
-}
+
 }
