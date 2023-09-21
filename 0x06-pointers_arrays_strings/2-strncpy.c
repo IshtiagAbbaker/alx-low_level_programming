@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * *_strncpy - find the length of a string
+ * *_strncpy - copy a string
  * @dest: pointer 1
  * @src: pointer 2
  * @n: int
