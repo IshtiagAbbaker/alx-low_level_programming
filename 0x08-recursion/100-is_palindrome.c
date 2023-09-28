@@ -1,31 +1,51 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
- * is_prime_number - check if n is a prime number
- * @n: int
+ * last_index - returns the last index of a string (counts the null char)
+ * @s: pointer the string
+ * Return: int
+ */
+
+int last_index(char *s)
+{
+int n = 0;
+
+if (*s > '\0')
+n += last_index(s + 1) + 1;
+
+return (n);
+}
+
+/**
+ * is_palindrome - check if a string is a palindrome
+ * @s: string to check
+ * Return: 0 or 1
+ */
+
+int is_palindrome(char *s)
+{
+int end = last_index(s);
+
+return (check(s, 0, end - 1, end % 2));
+}
+
+/**
+ * check - checker for the palindrome
+ * @s: string
+ * @start: int moves from right to left
+ * @end: int moves from left to right
+ * @pair: int
  * Return: 0 or 1
  */
 
 
-int is_prime_number(int n)
-{
-	return (check_prime(n, 2));
-}
-
-/**
- * check_prime - check all number < n if they can divide it
- * @n: int
- * @resp: int
- * Return: int
- */
-
-int check_prime(int n, int resp)
+int check(char *s, int start, int end, int pair)
 {
 
-if (resp >= n && n > 1)
+if ((start == end && pair != 0) || (start == end + 1 && pair == 0))
 return (1);
-else if (n % resp == 0 || n <= 1)
+else if (s[start] != s[end])
 return (0);
 else
-return (check_prime(n, resp + 1));
+return (check(s, start + 1, end - 1, pair));
 }
