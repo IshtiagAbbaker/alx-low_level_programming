@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# Create main.h with function prototypes
+echo -e "#ifndef MAIN_H\n#define MAIN_H\n\n" > main.h
+
+# Define function names and prototypes
+functions=(
+    "_putchar(char c)"
+    "_islower(int c)"
+    "_isalpha(int c)"
+    "_abs(int n)"
+    "_isupper(int c)"
+    "_isdigit(int c)"
+    "_strlen(char *s)"
+    "_puts(char *s)"
+    "_strcpy(char *dest, char *src)"
+    "_atoi(char *s)"
+    "_strcat(char *dest, char *src)"
+    "_strncat(char *dest, char *src, int n)"
+    "_strncpy(char *dest, char *src, int n)"
+    "_strcmp(char *s1, char *s2)"
+    "_memset(char *s, char b, unsigned int n)"
+    "_memcpy(char *dest, char *src, unsigned int n)"
+    "_strchr(char *s, char c)"
+    "_strspn(char *s, char *accept)"
+    "_strpbrk(char *s, char *accept)"
+    "_strstr(char *haystack, char *needle)"
+)
+
+# Create empty C files for each function
+for func_proto in "${functions[@]}"; do
+    func_name=$(echo "$func_proto" | cut -d '(' -f 1)
+    func_file="${func_name:1}.c"
+
+    # Append function prototype to main.h
+    echo "int ${func_proto}" >> main.h
+
+    # Create an empty C file for each function with #include "main.h"
+    echo -e "#include \"main.h\"\n\n${func_proto} {\n    // TODO: Implement this function\n    return 0;\n}" > "$func_file"
+
+    echo "Created file: $func_file"
+done
+
+# Close main.h include guard
+echo -e "\n#endif // MAIN_H" >> main.h
+echo "Created file: main.h"
+
